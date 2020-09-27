@@ -21,6 +21,7 @@ import TablaOtrasObligaciones from "./Tabla-Otras-Obligaciones";
 
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import HistorialMatricula from "./Historial-Matricula";
 
 //import TablaOtrasObligCanceladas from './Tabla_Otras_Oblig_Canceladas'
 
@@ -104,7 +105,8 @@ class ImportePagos extends React.Component {
       pagosEnsenanzaValidos: [],
       pagosRepitenciaValidos: [],
       pagosOtrosValidos: [],
-      /* */
+      /*AMC*/
+      historialMatricula: [],
 
       bool1: 0,
       bool2: 0,
@@ -1029,6 +1031,9 @@ class ImportePagos extends React.Component {
             console.error(error);
           });
 
+          
+
+
         //****************************************** */
         //*********************FIN***************** */
         //****************************************** */
@@ -1219,7 +1224,7 @@ class ImportePagos extends React.Component {
             </h3>
             <hr />
             <div className="SplitPane row">
-              <div className=" col-xs-3">
+              <div className="card-head col-xs-2">
                 <h4 className="center">DATOS PERSONALES</h4>
                 <div className="center datos">
                   <i className="material-icons medium">account_circle</i>
@@ -1251,8 +1256,8 @@ class ImportePagos extends React.Component {
                 </h6>
               </div>
 
-              {this.state.showDetCosto ? (
-                <div className=" col-xs-3">
+              {/* {this.state.showDetCosto ? (
+                <div className="card-head col-xs-3">
                   <CostoDelProgramaDet
                     datosPrograma={this.state.datosformulario}
                     datosCosto={this.state.costosP}
@@ -1260,13 +1265,13 @@ class ImportePagos extends React.Component {
                 </div>
               ) : (
                 <div></div>
-              )}
+              )} */}
 
-              <div className=" col-xs-3">
+              <div className="card-head col-xs-3">
                 <CostoDelProgramaDet costoxciclo={this.state.costoxciclo} />
               </div>
 
-              <div className=" col-xs-6">
+              <div className="card-head col-xs-4">
                 {/*<h6 align="center" className="Alumno"><b>Costo total del Programa:</b></h6>
                       <h6 align="center" className="negro">S/.</h6>
                   <h6 align="center" className="Alumno"><b>Beneficio:</b></h6>
@@ -1277,6 +1282,10 @@ class ImportePagos extends React.Component {
                   datosCosto={this.state.costosP}
                   tipoMoneda={this.state.tipoMonedaMatriculaUpg}
                 />
+              </div>
+
+              <div className=" col-xs-3">
+                <HistorialMatricula codAlu={this.state.pagos[0].codAlumno} />
               </div>
             </div>
 

@@ -449,6 +449,7 @@ h6 {
 .SplitPane {
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
 .SplitPane-left {
@@ -713,4 +714,31 @@ table tbody tr td .centrar-label {
 
 .btn-container {
   padding: 10px;
+}
+
+/*AMC*/
+
+.scrollh {
+  width: auto;
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+  background: #f0f0f0;
+  white-space: nowrap; /*Sin salto de linea*/
+}
+
+.card-head{
+  padding: 3px;
+}
+
+.tableScrollHV{
+  width: auto;
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: #f0f0f0;
+}
+
+.cajita{
+  margin-top: 20px;
 }

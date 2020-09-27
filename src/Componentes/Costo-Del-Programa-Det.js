@@ -1,47 +1,39 @@
-import React from 'react'
-import '../App.css';
+import React from "react";
+import "../App.css";
 class CostoDelProgramaDet extends React.Component {
-
   render() {
-    
+    return (
+      <div>
+        <h6 align="center" className="Alumno">
+          <b>Costo Detalle del Programa:</b>
+        </h6>
 
-    return(
-      
-			<div>
-      <h6 align= "center" className="Alumno"><b>Costo Detalle del Programa:</b></h6>
-      
-      <table className="tableScroll">
-        <thead>
-      <tr>      
-        
-        <th className="th">N°</th>
-        <th className="th">CICLO</th>
-        <th className="th">CONCEPTO</th>
-        <th className="th">DESCR. MIN</th>
-        <th className="th">MONEDA</th>
-        <th className="th">IMPORTE</th>
-        
-      </tr>
-      </thead>
-      <tbody>
-      {this.props.costoxciclo.map((data,key)=>
-        
-        <tr key={key}>
-            <td className="td">{key+1}</td>
-            <td className="td">{data.ciclo}</td>
-            <td className="td">{data.concepto}</td>
-            <td className="td">{data.descripcion_min}</td>
-            <td className="td">{data.moneda}</td>
-            <td className="td">{data.importe}</td>
-        </tr>
+        <table className="tableScroll">
+          <thead>
+            <tr>
+              <th className="th">N°</th>
+              <th className="th">CICLO</th>
+              <th className="th">CONCEPTO</th>
+              <th className="th">DESCR. MIN</th>
+              <th className="th">MONEDA</th>
+              <th className="th">IMPORTE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.costoxciclo.map((data, key) => (
+              <tr key={key}>
+                <td className="td">{key + 1}</td>
+                <td className="td">{data.ciclo}</td>
+                <td className="td">{data.concepto}</td>
+                <td className="td">{data.descripcion_min}</td>
+                <td className="td">{data.moneda}</td>
+                <td className="td">{data.importe}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-      )}
-      </tbody>
-      </table>
-      
-      
-      
-      {/*<h6 align="center" className="Alumno"><b>Datos del Beneficio:</b></h6>
+        {/*<h6 align="center" className="Alumno"><b>Datos del Beneficio:</b></h6>
       
       <table>
       <tr>      
@@ -66,9 +58,8 @@ class CostoDelProgramaDet extends React.Component {
       )}
       </table>*/}
       </div>
-    
-    )
+    );
   }
 }
 
-export default CostoDelProgramaDet
+export default CostoDelProgramaDet;
